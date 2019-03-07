@@ -14,11 +14,6 @@ namespace MobilePhoneProj
         public abstract Camera Camera { get; }
         public abstract SimcardBase Simcard { get; }
 
-        private void Show(IScreenImage screenImage)
-        {
-            Screen.Show(screenImage);
-        }
-
         public override string ToString()
         {
             var descriptionBuilder = new StringBuilder();

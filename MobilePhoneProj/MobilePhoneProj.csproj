@@ -45,13 +45,8 @@
   <ItemGroup>
     <Compile Include="BatteryBase.cs" />
     <Compile Include="Camera.cs" />
-    <Compile Include="ColorfulScreen.cs" />
     <Compile Include="IScreenImage.cs" />
     <Compile Include="Mobile.cs" />
-    <Compile Include="MonochromeScreen.cs" />
-    <Compile Include="OLEDScreen.cs" />
-    <Compile Include="Processor.cs" />
-    <Compile Include="RetinaScreen.cs" />
     <Compile Include="ScreenBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

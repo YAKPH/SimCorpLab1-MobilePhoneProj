@@ -8,7 +8,7 @@ namespace MobilePhoneProj
 {
     public class SimCorpMobile:Mobile
     {
-        private readonly OLEDScreen vScreen;
+        private readonly ScreenBase vScreen;
         private readonly BatteryBase vBattery;
         private readonly SimcardBase vSimcard;        
         private readonly Camera vCamera;
@@ -20,8 +20,6 @@ namespace MobilePhoneProj
         
         public SimCorpMobile ()
 	{
-            vScreen = new OLEDScreen();
-
             var type = BatteryBase.BatteryTypes.LithiumIonBattery;
             int capacityMAh = 2200;
             vBattery = new BatteryBase(type,capacityMAh) ;
@@ -36,7 +34,14 @@ namespace MobilePhoneProj
             IndivPixelSize = 1000,
             LensType=Camera.LensTypes.Dual,
             ZoomType=Camera.ZoomTypes.Optical  
-        };            
+        };       
+            vScreen = new ScreenBase
+          {
+            HorizontalPixels = 640,
+            VerticalPixels = 960,
+            Diagonal=3.5,
+            ScreenType=ScreenBase.ScreenTypes.LCD
+        };
 	}
         
     }
