@@ -8,8 +8,8 @@ namespace MobilePhoneProj
 {
     public abstract class ScreenBase
     {
-        int resulution;
-        double diagonal;
+        int Resulution;
+        double Diagonal;
         public abstract void Show(IScreenImage screenimage);
         public abstract void Show(IScreenImage screenimage, int brightness);
     }

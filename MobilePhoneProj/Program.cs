@@ -11,8 +11,7 @@ namespace MobilePhoneProj
         static void Main(string[] args)
         {
             var mymobile = new SimCorpMobile();
-            string description= mymobile.GetDescription();
-            Console.WriteLine(description);
+            Console.WriteLine(mymobile);
             Console.ReadKey();
         }
     }

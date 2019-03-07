@@ -8,24 +8,36 @@ namespace MobilePhoneProj
 {
     public class SimCorpMobile:Mobile
     {
-        public override ScreenBase Screen { get { return vOLEDScreen; } }
-        private readonly OLEDScreen vOLEDScreen = new OLEDScreen();
+        private readonly OLEDScreen vScreen;
+        private readonly BatteryBase vBattery;
+        private readonly SimcardBase vSimcard;        
+        private readonly Camera vCamera;
+        
+        public override ScreenBase Screen { get { return vScreen; } }
+        public override BatteryBase Battery { get { return vBattery; } }
+        public override SimcardBase Simcard { get { return vSimcard; } }
+        public override Camera Camera { get{ return vCamera; } } 
+        
+        public SimCorpMobile ()
+	{
+            vScreen = new OLEDScreen();
 
-        public override BatteryBase Battery { get { return vLiIon; } }
-        private readonly LithiumIonBattery vLiIon = new LithiumIonBattery();
-
-        public override Camera Camera { get{ return vCam; } }
-        private readonly Camera vCam = new Camera
-        {
-            megapixels = 2000,
-            inivpixelsize = 1000,
-            lensType=Camera.LensType.Dual,
-            zoomType=Camera.ZoomType.Optical
+            var type = BatteryBase.BatteryTypes.LithiumIonBattery;
+            int capacityMAh = 2200;
+            vBattery = new BatteryBase(type,capacityMAh) ;
             
-        };
-
-        public override SimcardBase Simcard { get { return vSim; } }
-        private readonly NanoSimCard vSim = new NanoSimCard();
+            string number="+380959992299";
+            var format = SimcardBase.SimFormats.Nano;
+            vSimcard = new SimcardBase(number,format); 
+            
+            vCamera = new Camera
+        {
+            MegaPixels = 2000,
+            IndivPixelSize = 1000,
+            LensType=Camera.LensTypes.Dual,
+            ZoomType=Camera.ZoomTypes.Optical  
+        };            
+	}
         
     }
 }

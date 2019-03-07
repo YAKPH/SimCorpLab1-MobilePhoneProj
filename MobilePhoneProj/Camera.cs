@@ -8,17 +8,18 @@ namespace MobilePhoneProj
 {
     public class Camera
     {
-        public enum ZoomType {Digital,Optical};
-        public ZoomType zoomType;
-        public enum LensType { One,Dual,Multi };
-        public LensType lensType;
+        public int MegaPixels;
+        public int IndivPixelSize;
 
-        public  int megapixels;
-        public  int inivpixelsize;
+        public ZoomTypes ZoomType;
+        public LensTypes LensType;
+
+        public enum ZoomTypes { Digital,Optical };
+        public enum LensTypes { One,Dual,Multi };
 
         public override string ToString()
         {
-            var returnstr = $"pixels = {megapixels}, individual pixel size = {inivpixelsize}, lens type = {lensType}, zoom = {zoomType}.";
+            var returnstr = $"pixels = {MegaPixels}, individual pixel size = {IndivPixelSize}, lens type = {LensType}, zoom = {ZoomType}";
             return returnstr;
         }
     }
